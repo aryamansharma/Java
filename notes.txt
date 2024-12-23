@@ -1,0 +1,68 @@
+core Java:
+1. to print we use System.out.print();
+2. semi-colon at the end is important;
+3. whenever we want to print string we pass them in double quotes("") not in single quotes('');
+    eg : 
+        * System.out.print('hello world'); // Not acceptable.
+        * System.out.print("Hello world"); // acceptable.
+4. to run java code there are 2 steps : // make sure to run these 2 commands in the folder where your Java file is.
+    1. compile : javac filename.java
+    2. run : java classname // without file extension
+5. structure of a Java program : 
+    class Hello { // classname should always be starting with capital
+    public static void main(String a[]) { // this String argument is very important
+            System.out.print("hello workd");
+        }
+    }
+
+6. How a Java code is run : 
+    1. we write the code in Java.
+    2. that java code is converted to byte code by compiler when we run javac filename.java
+    3. after compilation a file is created with classname of the class containing the main method.
+    4. run java classname
+    5. that code is executed on JVM, which is installed in our machine.
+
+7. some core points about Java : 
+    1. Java is platform independent.
+    2. JVM is platform dependent.
+    3. the main method is entry point of a code which is required by JVM, without this main method the code will not run. 
+        this is like a starting point of our program.
+    4. basically a device hardware will be having the OS,
+        and on that OS we install JDK which will be containing JRE(Java Runtime Environment) which will be containg the JVM.
+    5. JRE contains JVM and libraries and Runtime.
+
+8. difference between print and println is that println prints the output in a different line while print prints the output in a single line.
+    for eg : 
+        for println : 
+            System.out.println("Hello world!");  
+            System.out.println("Hello world!");
+        output : 
+            Hello world!
+            Hello world!
+        for print : 
+            System.out.print("Hello world!");
+            System.out.print("Hello world!");
+        output : 
+            Hello world!Hello world!
+
+9. Data types:
+    primitive data types : 
+        1. integers :
+            integer types : int, byte, short, long
+            NOTE : while workign with long we need to put 'l' at the end,
+                like this : long num = 1223l;
+        2. float : 
+            float types : double, float
+            NOTE : while working with float type values, double is the default data type for Java. 
+                    double num = 5.6; // this is valid
+                    float num = 5.6; // this is invalid  
+                so if you want to create a variable with float data type, you have to do something like this :
+                    float num = 5.6f;
+        3. characters : it can only store a single character.
+            character type : char
+            NOTE : char only accepts single quotes(''), it will not accept double quotes(""), they are for strings.
+        4. boolean :
+            boolean type : bool
+            NOTE : boolean only accepts true and false, no 1 or 0.
+    
+
