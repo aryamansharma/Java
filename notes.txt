@@ -65,4 +65,76 @@ core Java:
             boolean type : bool
             NOTE : boolean only accepts true and false, no 1 or 0.
     
+10. Literals: literals are just values of a variable.
+    1. int a = 10_00_000; // this is valid in Java.
+        System.out.println(a);
+        output : 1000000;
+    
+    2. public static void main(String[] args) {
+        char c = 'a';
+        c++; // this c++ will increment the 'a' to 'b';
+        System.out.println(c++); // this c++ will increment the 'b' to 'c';
+        System.out.println(c);
+        }
 
+    3. if we do something like this : 
+        public static void main(String[] args) {
+            double num = 56;
+            System.out.println(num);
+        }
+
+        output : 56.0 // double will convert the 56 to 56.0;
+
+11. type casting and conversion :
+    1. when we explicitly convert the type it is known as type casting.
+        eg : byte a = 2;
+             int b = 1;
+             a=b; // this will not work byte range is smaller than int.
+             a = (byte) b; // type casting
+             b=a; // this will work because byte range is smaller than int.
+    2. when we implicitly convert the type it is known as type conversion.
+            byte a = 2;
+            int b = 1;
+            b=a; // type conversion.
+    3. type promotion : when automatically converts the type of a lower data type type to higher data type while evaluating an expression : 
+        byte a = 10;
+        byte b = 30;
+        int result = a * b; // this will give 300 of int because of type promotion.
+
+    Note : 
+        1.
+            float num = 5.6f;
+            int a = 5;
+            a = num; // this will throw an error because we cannot assign a float value to an int.
+            a = (int) num; type casting. 
+            System.out.println(a);
+            output : 5; // it will lose the decimal part of the number.  
+        2.    
+            byte a = 2;
+            int b = 257;
+            a = (byte) b;
+            System.out.println(a);
+            output : 1 // because it will perform a modulus operation with 256.
+
+12. relational operators : 
+    1. for equality check we use : '=='
+        eg : int a = 1;
+             int b = 2;
+             System.out.println(a==b); 
+             output : true;
+
+13. if else :
+    1. Java is not an identation depent language.
+    2. if we have 1 line of code to execute in an if or else block we can skip curly braces but if we have more than line of code in any of the if or else block we need to use curly braces. just like Javascript
+        eg : 
+
+            if(true) System.out.println('a');
+            else System.out.println('b');
+
+            if(true) {
+                System.out.println('a');
+                System.out.println('b');
+            } else {
+                System.out.println('c');
+                System.out.println('d');
+            }
