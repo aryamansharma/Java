@@ -1,6 +1,19 @@
+class Abc {
+
+    public void playMusic() {
+        System.out.println("abc");
+    } 
+    
+    public String efg() {
+        return "Abcds";
+    }
+
+}
+
 class Hello {
     public static void main(String a[]) {
-        char abc = '8';
-        System.out.println(abc);
+        Abc abc = new Abc();
+        abc.playMusic();
+        System.out.println(abc.efg());
     }
 }

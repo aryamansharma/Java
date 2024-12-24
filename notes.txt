@@ -138,3 +138,61 @@ core Java:
                 System.out.println('c');
                 System.out.println('d');
             }
+
+OOP in Java :
+1. classes and objects in Java :
+    * For every method we need to provide access modifiers.
+
+    class Calculator {
+
+        // this int here is the return type of this method.
+        public int add(int n1, int n2) {
+            int result = n1+n2;
+            return 
+        }
+        
+        // if we dont a method to return anything we use void, like this
+        public void play(){ // this method will return anything
+
+        }
+
+        // if we want to specify the return type as String for a method, we use it like this
+        public String abc() { // this String we use to specify the return of this method
+
+        }
+    }
+
+    public class Demo {
+        public static void main(String a[]) {
+            int num1 = 1;
+            int num2 = 2;
+
+            // this is how we create an object of a class in Java.
+            // this Calculator will be the type of the variable(object in this case).
+            // calc will be the object or we can say it will be a reference variable.
+            // Calculator() will be used to create object of this Calculator class.
+            Calculator calc = new Calculator();
+            int result = calc.add(num1+num2);
+            System.out.println(result);
+        }
+    }
+
+2. method overloading : when we have 2 implementation of a method with the exact same name, 
+    the only difference will be between the paramenters adn the type of paramenters.
+
+    class Abc {
+        public int add(int a, int b, int c) {
+            return a+b+c;
+        }
+        public int add(int a, int b) {
+            return a+b;
+        }
+    }
+
+    class Main {
+        public static void main(String a[]) {
+            Abc obj = new Abc();
+            obj.add(1,2,3); //this will call the 1st implementation
+            obj.add(1,2); // this will call the 2nd implementation
+        }
+    }
