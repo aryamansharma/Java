@@ -1,19 +1,15 @@
-class Abc {
+class Demo {
+    int a = 1;
 
-    public void playMusic() {
-        System.out.println("abc");
-    } 
-    
-    public String efg() {
-        return "Abcds";
+    public void age() {
+        int a = 2;
+        System.out.println(a);
     }
-
 }
 
 class Hello {
     public static void main(String a[]) {
-        Abc abc = new Abc();
-        abc.playMusic();
-        System.out.println(abc.efg());
+        Demo obj = new Demo();
+        obj.age();
     }
 }
