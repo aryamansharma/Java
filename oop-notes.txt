@@ -1,0 +1,86 @@
+OOP in Java :
+1. classes and objects in Java :
+    * For every method we need to provide access modifiers.
+
+    class Calculator {
+
+        // this int here is the return type of this method.
+        public int add(int n1, int n2) {
+            int result = n1+n2;
+            return 
+        }
+        
+        // if we dont a method to return anything we use void, like this
+        public void play(){ // this method will return anything
+
+        }
+
+        // if we want to specify the return type as String for a method, we use it like this
+        public String abc() { // this String we use to specify the return of this method
+
+        }
+    }
+
+    public class Demo {
+        public static void main(String a[]) {
+            int num1 = 1;
+            int num2 = 2;
+
+            // this is how we create an object of a class in Java.
+            // this Calculator will be the type of the variable(object in this case).
+            // calc will be the object or we can say it will be a reference variable.
+            // Calculator() will be used to create object of this Calculator class.
+            Calculator calc = new Calculator();
+            int result = calc.add(num1+num2);
+            System.out.println(result);
+        }
+    }
+
+2. method overloading : when we have 2 implementation of a method with the exact same name, 
+    the only difference will be between the paramenters adn the type of paramenters.
+
+    class Abc {
+        public int add(int a, int b, int c) {
+            return a+b+c;
+        }
+        public int add(int a, int b) {
+            return a+b;
+        }
+    }
+
+    class Main {
+        public static void main(String a[]) {
+            Abc obj = new Abc();
+            obj.add(1,2,3); //this will call the 1st implementation
+            obj.add(1,2); // this will call the 2nd implementation
+        }
+    }
+
+3. how code is executed inside JVM:
+    suppose we have a structure like this : 
+    
+    class Abc {
+        int num = 1; // this will be called as an instance variable.
+
+        public int add(int a, int b) { // these a and b will be the local variables.
+            return a+b;
+        }
+
+    }
+    
+    class Main {
+        public static void main(String a[]) {
+            Abc obj1 = new Abc();
+            Abc obj2 = new Abc();
+
+            obj1.num = 5;
+            System.out.println(obj1.num); // output : 5
+            System.out.println(obj2.num); // output : 1
+        }
+    }
+
+    stack and heap :
+    * every function will be having its own stack.
+    * heap will be having all the objects created from a class.
+    * stack will be having key value pairs, where key will be the local variable of the function and value of the key will be the value fo the variable.
+    * in case of objects, inside the stack, the value for the object key will be the address for that object inside the heap.
