@@ -1,0 +1,83 @@
+1. static variables:
+    * if we make a instance variable as static, 
+    then that variable value will be shared will all the objects of that class.
+    and if we update that static variable value, then all the objects will be having the updated value of that variable.
+
+    * creating and updating a static variable : 
+    class Phone {
+        String brand;
+        int price;
+
+        //static variable
+        static String type;
+    }
+
+    class Main {
+        public static void main(String a[]) {
+            //updating the static variable value
+            Phone.type = "smartPhone";
+
+            Phone obj1 = new Phone();
+            obj1.brand = "Apple";
+            obj1.price = 1500;
+        }
+    }
+
+2. static methods:
+    * if we create a method as static then we dont need to create an instance of that class to call that we directly call with the help of class.
+    * we cannot access non staitic variables inside static method.
+
+    creating and using static method :
+    class Phone {
+        String brand;
+        int price;
+
+        //static variable
+        static String type;
+
+
+        public static void show(Phone obj) {
+            // we have to pass the obj in the static method to get the non static values inside static methods.
+            System.out.println(obj.brand+": "+obj.price+": "+type);
+        }
+    }
+
+    class Main {
+        public static void main(String a[]) {
+            //updating the static variable value
+            Phone.type = "smartPhone";
+
+            Phone obj1 = new Phone();
+            obj1.brand = "Apple";
+            obj1.price = 1500;
+            Main.show(obj1);
+        }
+    }
+
+3. static block:
+    * static block is used to initialize static variables.
+    * some important points :
+        * basically when we create an object of an class there are 2 steps:
+            1. class is loaded : basically there is a class loader inside JVM which will be containg all the classes when an object is created of that of that class,
+                and this is just a 1 time step, after that if we create another object of that class then this class does not need to be loaded, it is already loade.
+            2. object is created.
+
+        * so when the class is loaded, the static method is called for just 1 time when the class is loaded for the 1st time, after that it is not called.
+            and the static method is first method called even before constructor.
+
+        * if we want to just call the static method of a class without creating an object we can use the Class class:
+            Class.forName("Phone") // here Phone is the class name.
+
+    * defining a static method : 
+    class Phone {
+        String brand;
+        int price;
+
+        //static variable
+        static String type;
+
+        // static block
+        static {
+            type = "phone";
+        }
+    }

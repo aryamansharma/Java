@@ -1,0 +1,48 @@
+String in java:
+1. String should always be in double quotes("").
+2. char should always be in single quotes('').
+3. string are also created in heap memory just like objects.
+4. defining a string : 
+    class demo {
+        public static void main(String a[]) {
+            // this String keyword here is basically a class. 
+            // this name variable will be holding the address of this string behind the scenes.
+            String name = "aryaman"; // this way of creating string is more used.
+
+            // we can create a string like this as well
+            String name2 = new String("ABC");
+        }
+    }
+
+5. some string methods :
+    1. name.charAt(1); // this will give the char at 1st index of the name string.
+    2. name.concat(" sharma"); // this concat method will join 2 strings.
+        * output : aryaman sharma   
+
+6. some important points :
+    * in heap there is something known as string constant pool which is used to created string.
+    * when we something like this :
+        String name = "aryaman";
+
+        * we are creating an object of this string with value "aryaman" and that object is bieng stored in the string constant pool.
+            and this name variable will be having the address of that object.
+
+        After this suppose we do something like these:
+
+        // this step will delete older object from string constant pool with value "aryaman" and 
+            create a new one with value "aryaman sharma" and name variable will point to that new object.
+        name = name + " sharma";
+
+        * these s1 and s2 both will be pointing to 1 object, they will create 2 different with same values.
+        String s1 = "Aryaman";
+        String s2 = "Aryaman";
+
+    * by default strings are immutable, meaning their values cannot be change.
+
+7. we can create mutable strings as well, meaning we can change the string by using StringBuffer class.
+    * this is how we create a StringBuffer :
+        StringBuffer name = new StringBuffer("aryaman");
+
+    * we have different methods we can use on StringBuffer.
+
+    * the initial capacity of a StringBuffer is 16 characters.

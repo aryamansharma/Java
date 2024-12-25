@@ -64,6 +64,8 @@ core Java:
         4. boolean :
             boolean type : bool
             NOTE : boolean only accepts true and false, no 1 or 0.
+
+        Note : primitive data types always starts with small characters like, int, char, bool, long etc.
     
 10. Literals: literals are just values of a variable.
     1. int a = 10_00_000; // this is valid in Java.
