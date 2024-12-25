@@ -50,3 +50,52 @@ Array in Java:
 
 7. we can create 3D array as well :
    int num[][][] = new int[3][2][2];
+
+8. Array is created in heap memory.
+
+9. once we declare an array with a size, we canot change the size again.
+
+10. we cannot store different types of data like int, char as elements in a single array.
+
+11. Array of objects :
+
+class Student {
+    int rollNo;
+    String name;
+    int marks;
+}
+
+class Main {
+    public static void main(String a[]) {
+        Student s1 = new Student();
+        s1.rollNo = 1;
+        s1.name="sexy j";
+        s1.marks=89;
+
+        Student s2 = new Student();
+        s2.rollNo = 2;
+        s2.name="chutad aurat";
+        s2.marks=79;
+
+        Student s3 = new Student();
+        s3.rollNo = 3;
+        s3.name="maa ki chut";
+        s3.marks=89;
+
+        // this line will not create objects itself, we have to create objects manually,
+        but it will create an array which holds the referrence to the objects of Student class.
+        Student students[] = new Student[3]; 
+
+        we manually have to assign the objects in the particular index of the array.
+        students[0] = s1;
+        students[1] = s2;
+        students[2] = s3;
+        
+        for(Student student : students) {
+            System.out.println(student.name+" : "+student.marks);
+        }
+
+        //if we try to print the object directly, like this
+        System.out.println(s1); //this will not give the object but it will give the address of the object.
+    }
+}
