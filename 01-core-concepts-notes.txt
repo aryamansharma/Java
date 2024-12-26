@@ -126,6 +126,7 @@ core Java:
              output : true;
 
 13. if else :
+
     1. Java is not an identation depent language.
     2. if we have 1 line of code to execute in an if or else block we can skip curly braces but if we have more than line of code in any of the if or else block we need to use curly braces. just like Javascript
         eg : 
@@ -140,3 +141,5 @@ core Java:
                 System.out.println('c');
                 System.out.println('d');
             }
+
+14. default value of int is 0 and of string is null.

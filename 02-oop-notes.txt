@@ -29,10 +29,24 @@ OOP in Java :
             // this is how we create an object of a class in Java.
             // this Calculator will be the type of the variable(object in this case).
             // calc will be the object or we can say it will be a reference variable.
-            // Calculator() will be used to create object of this Calculator class.
+            // new Calculator() will be used to create object of this Calculator class.
             Calculator calc = new Calculator();
             int result = calc.add(num1+num2);
             System.out.println(result);
+        }
+    }
+
+    * anonymous object :
+     class Calculator {
+    }
+     public class Demo {
+        public static void main(String a[]) {
+            int num1 = 1;
+            int num2 = 2;
+
+            // this is anonymous object.
+            new Calculator(); 
+            // this is not usefull because we cannot use it further.
         }
     }
 
@@ -84,3 +98,83 @@ OOP in Java :
     * heap will be having all the objects created from a class.
     * stack will be having key value pairs, where key will be the local variable of the function and value of the key will be the value fo the variable.
     * in case of objects, inside the stack, the value for the object key will be the address for that object inside the heap.
+
+4. encapsulation : meaning hiding the data and methods from other parts of the program.
+    * we can use getters and setters to implement encapsulation.
+    * instance variable should always be private.
+
+    class Human {
+        private int age;
+        private String name;
+
+        // getter for age
+        public getAge() {
+            return this.age;
+        }
+
+        // setter for age
+        public setAge(int age) {
+            this.age = age;
+        }
+    }
+
+    class Demo {
+        public static void main(String a[]) {
+            Human obj = new Human();
+            obj.setAge(25);
+            System.out.println(obj.getAge());
+        }
+    }
+
+5. In java if we do something like this:
+    class Human {
+        private int age;
+        private String name;
+
+        public Human(int a, String n) {
+            age = age;
+            name = name;
+
+            // this assignment without this keyword is valid, 
+            but we should not do this because arguements and instance variables can have same name,
+            so in that case it will not assign the value to the instance variables.
+        }
+    }
+
+    class Demo {
+        public static void main(String a[]) {
+            Human obj = new Human(25,"Aryaman");
+        }
+    }
+
+6. this keyword works in java just like Javascript.
+
+7. constructor : constructor of class will always run whenver we create an object of that class.
+    * syntax : 
+
+    class Human {
+        private int age;
+        private String name;
+
+        // this is a constructor. the name of the constructor will be same as the class in Java.
+        // this is known as a default constructor. it will always be present in the class, even if you dont define one yourself.
+        public Human() {
+
+        }
+    }
+
+    * we can overload constructor as as well :
+      class Human {
+        private int age;
+        private String name;
+
+        public Human() {
+
+        }
+
+        // these are called parameterized constructors.
+        public Human(int age, String name) {
+            this.age = age;
+            this.name = name;
+        }
+    }
