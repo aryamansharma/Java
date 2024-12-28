@@ -271,3 +271,163 @@ OOP in Java :
     this is method overriding.
     if we dont have the method in our child class but in our parent class, then the parent class method will be executed.
 
+12. access modifiers : access modifiers are used to give protectection to instance variable and methods of a class. 
+    they are of 4 types:
+
+    1. default : where we dont provide any access modifiers to an instance variable of method. but it is not recommended. 
+    we should always give access modifiers to instance variables and methods.
+        code :
+        class A {
+            int marks;
+        }
+
+        * they are accesible within the same class, same package subclass and same package non-subclass only.
+
+    2. public : public variables or methods can be accessible from anywhere.
+    
+    3. protected : private variables and methods can be accessible in the same, same package subclass, 
+        same package non-subclass and different package subclass.
+
+    4. private :  protected variables and methods can be accessible in the same class only.
+
+    Note : we should always make instance variables private and methods as public.
+
+13. polymorphism : it simply means same name but different form. there are 2 tyes of polymorphism : 
+    1. compile time polymorphism : method overloading is a type of compile time polymorphism.
+    2. run time polymorphism : mthod overriding is a type of run time polymorphism.
+    
+    * dynamic method dispatch : Dynamic method dispatch is the mechanism by which a call to an overridden method is resolved at run time, 
+        rather than compile time
+     suppose we have 2 classes like this :
+        class A {
+            public void show() {
+                System.out.println("in A show");
+            }
+        }
+
+        class B extends A {
+            public void show() {
+                System.out.println("in B show");
+            }
+        }
+
+        class Main {
+            public static void main(String a[]) {
+                A obj = new A();
+                obj.show(); // output : in A show.
+
+                // this is dynamic method dispatch. basically we can reassign the object of a parent class to a child class.
+                obj = new B();
+                obj.show(); // // output : in B show.
+            }
+        }
+
+        Note: this is only possible in inheritance. without inheritance it is not possible.
+
+14. final keyword in java :
+    1. final variables : when we make a variable as final, that variable will be a constant then. 
+        we cannot change the value of that variable again.
+
+        class A {
+            final int age = 9;
+            age = 5; // will throw and error.
+
+            final int num; // this will also throw an error because we need to initialize the final variable.
+        }
+
+        class Main {
+            public static void main(String a[]) {
+                A obj = new A();
+            }
+        }
+
+    2. final class : when we make a class, that class cannot inherited or we can say we cannot create a subclass of that class.
+
+        final class A {
+            int num=9;
+        }
+
+        class B extens A { // not allowed
+
+        }
+
+        class Main {
+            public static void main(String a[]) {
+                A obj = new A();
+            }
+        }
+
+    3. final method : final method cannot be overridden.
+
+         class A {
+           public final void show () {
+            System.out.println("A show method");
+           }
+        }
+
+        class B extends A {
+            public void show () { // this is not allowed
+            System.out.println("B show method");
+           }
+
+        }
+
+        class Main {
+            public static void main(String a[]) {
+                A obj = new A();
+            }
+        }
+
+15. string will have a method equal() to compare 2 strings.
+
+16. we can cast objects just like type casting:
+    suppose we have 2 classes : 
+        class A {
+            public void showA() {
+                System.out.println("in A show");
+            }
+        }
+
+        class B extends A {
+            public void showB() {
+                System.out.println("in B show");
+            }
+        }
+
+        class Main {
+            public static void main(String a[]) {
+
+                // this is upcasting, basically we are casting class child object to parent class object.
+                A objA = new B();
+
+                objA.showA(); // this will work
+
+                // now even though this objA object is of class B, it will not be having showB() method.
+                // to solve this problem we can do downcasting:
+
+                // this is downcasting
+                objB = (B) objA;
+                //now we can call showB() method.
+
+            }
+        }
+
+17. wrapper classes in java : in java for every primitive type we have a wrapper class for eg : for int we have Integer wrapper class etc.
+    wrapper classes extends the Object class.
+    this extends the functionality of primitive types.
+
+    class Main {
+        public static void main(String a[]) {
+            int num = 1;
+            Integer num1 = new Integer(num); // there is no need for this step now.
+            Integer num1 = num; // this step is called autoboxing where we directly assign the primitive type to an object type.
+
+            String str = "12";
+            // to convert this string into number we can use Integer Wrapper class.
+
+            System.out.println(Integer.parseInt(str));
+
+            int num4 = num1; // this step is called auto-unboxing where we directly assign the object type to an primitive type.
+        }
+    }
+    

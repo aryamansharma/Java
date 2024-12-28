@@ -1,6 +1,6 @@
 1. static variables:
     * if we make a instance variable as static, 
-    then that variable value will be shared will all the objects of that class.
+    then that variable value will be shared will all the objects of that class with that single value.
     and if we update that static variable value, then all the objects will be having the updated value of that variable.
 
     * creating and updating a static variable : 
