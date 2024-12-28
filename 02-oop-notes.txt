@@ -178,3 +178,96 @@ OOP in Java :
             this.name = name;
         }
     }
+
+8. inheritance : 
+    // this Calc will be the super class or parent class or base class
+    class Calc {
+        public int add(int num1, int num2) {
+            return num1+num2;
+        }
+        public int sub(int num1, int num2) {
+            return num1-num2;
+        }
+    }
+
+    // this AdvanceCalc will be the sub class or child class or derived class
+    class AdvanceCalc extends Calc {
+        public int multi(int num1, int num2) {
+            return num1*num2;
+        }
+        public int division(int num1, int num2) {
+            return num1/num2;
+        }
+    }
+
+    class Main {
+        public static void main(String a[]) {
+            AdvanceCalc obj = new AdvanceCalc();
+
+            // even though add method is not defined in the AdvanceCalc class, we can still use it due to inheritance.
+            obj.add(2,3);
+
+            if we do something like this :
+            Calc obj2 = new Calc();
+            obj2.multi(2,3); // this will not work
+        }
+    }
+
+9. types of inheritance : 
+    1. single inheritance :  when there is just 1 parent class and 1 child class.
+    2. multilevel inheritance :
+        when we have a parent class and we derived a class from that class, 
+        and then we again derive a class from the already derived class and so on, this is multilevel inheritance.
+    3. multiple inheritance : when there are 2 parent class of a single child class.
+        * in java multiple inheritance is not possible, because of ambiguity problem, which stated that :
+            * suppose we have 2 parent classes and a single child class derived from those 2 parent classes and we create an object of that child class,
+            and we use that object to call a method named x() and that method is not present in the child class but it is present in both the parent classes,
+            so compiler will get confuse which x() method to call, so that is why multiple inheritance is not possible in java.
+
+10. this() method and super method() :
+    1. this() method is used to execute the constructor of that class.
+    2. super() method is used to execute the constructor of the parent class.
+
+    eg :
+
+    // all the classes in java will extend Object whether you mention it or not.
+    class A extends Object {
+
+        public A() {
+            // all the constructors of a class will having this super() method and will be the 1 call first in a constructor.
+            super(); // this will call the constructor of the Object class
+            System.out.println("A default constructor");
+        }
+
+        public A(int n) {
+            super();
+            System.out.println("A parameterized constructor");
+        }
+    }
+
+    class B extends A {
+        public B() {
+            super(5); // this way we can call the parameterized constructor of the parent class.
+            this(5); // this will the parameterized constructor of this class.
+            System.out.println("B default constructor");
+        }
+
+        public B(int n) {
+            super();
+            this(); // this method is will execut the constructor of the same class. 
+            System.out.println("B parameterized constructor");
+        }
+    }
+
+    class Main {
+        public static void main(String a[]) {
+            B obj = new B(); // creating an object of B
+        }
+    }
+
+11. method overriding : 
+    * suppose we have a method with exact same name in both the parent class and in child class as well,
+    and we create an object of child class and call that method , so the method of child class will be executed.
+    this is method overriding.
+    if we dont have the method in our child class but in our parent class, then the parent class method will be executed.
+

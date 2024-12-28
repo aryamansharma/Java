@@ -143,3 +143,18 @@ core Java:
             }
 
 14. default value of int is 0 and of string is null.
+
+15. packages : we use the concept of packages in java to basically divide our project into folders,
+    * package tools; //this means there will be a folder with name 'tools' containing this class A.
+        class A {
+        }
+
+    * importing a class from package : 
+        import tools.calc.A; // meaning we want class A which is inside a package or folder 'calc' which is inside 'tools'.
+
+    * importing all classes from a package : 
+        import tools.clalc.*; // this means it will give us all the files not folder inside calc folder.
+
+    * every inbuilt class is part of a package in java. eg:
+        import java.lang.*; // this contains the System class and String class etc. we dont need to import it, it is by default imported.
+    
