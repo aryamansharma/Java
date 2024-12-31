@@ -158,3 +158,20 @@ core Java:
     * every inbuilt class is part of a package in java. eg:
         import java.lang.*; // this contains the System class and String class etc. we dont need to import it, it is by default imported.
 
+16. for taking user input we use Scanner class like this:
+
+    // Scanner is in thisr package. we need to import it.
+    import java.util.Scanner;
+
+    public class Main {
+
+        public static void main(String a[]) {
+            // this step is important
+            Scanner sc = new Scanner(System.in); 
+
+            String ans = sc.nextLine(); // this nextLine will get the user input and will store it in the ans variable.
+            // the return type of this nextLine() is String. 
+            // we have different methods for returning different types such as nextInt() will return int type.
+
+        }   
+    }

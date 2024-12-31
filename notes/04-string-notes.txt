@@ -46,3 +46,5 @@ String in java:
     * we have different methods we can use on StringBuffer.
 
     * the initial capacity of a StringBuffer is 16 characters.
+
+8. for comparing strings we use equals() method.

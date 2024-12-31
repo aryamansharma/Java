@@ -84,7 +84,9 @@ class Main {
 
         // this line will not create objects itself, we have to create objects manually,
         but it will create an array which holds the referrence to the objects of Student class.
-        Student students[] = new Student[3]; 
+        Student students[] = new Student[3]; // this is the old way of defining an array of objects in java. we should not use this anymore.
+
+        Student[] students = new Student[3]; // this is the modern way of defining an array of objects. we should use this
 
         we manually have to assign the objects in the particular index of the array.
         students[0] = s1;
