@@ -431,3 +431,64 @@ OOP in Java :
         }
     }
     
+18. abstract keyword : suppose we have a situation where we dont know the implementation of a method,
+     but we want the extended classes to have that implementation in that we case we can use the concept of abstract.
+
+    // this is an abstract class
+    abstract class Car {
+
+        // this is an abstract method
+        // we can also say we are just declaring this method here and then the extended class will implement this method
+        // we simply just declare this method in the abstract class and the extended class will have the implementation.
+        public abstract void drive();
+
+        public void playMusic() {
+            System.out.println("playing music");
+        }
+    }
+
+    // this is a non abstract class and this is called a concrete class
+    class Ferrari extends Car {
+        public void drive() {
+            System.out.println("driving");
+        }
+    }
+
+    class Main {
+        public static void main(String[] args) {
+            // we cannot create an object of an abstract class but the type of that object can be of an abstract class.
+            Car car = new Ferrari();
+            car.drive();
+            car.playMusic();
+        }
+    }
+
+    1. we can create an abstract class with abstract keyowrd.
+    2. we can create an abstract method with abstract keyowrd.
+    2. we cannot create an object of an abstract class.
+    3. an abstract class contain abstract and normal methods as well,
+        but we cannot create an abstract method inside a concrete(non-abstract) class.
+    4. every abstract method implementation should always be in the extended class.
+
+19. inner class : we can create a class inside a class like this :
+    class A {
+        int age;
+
+        class B {
+            public void show(){
+                System.out.println("inner class");
+            }
+        }
+    }
+
+    class Main {
+        public static void main(String a[]){
+            A objA = new A();
+            A.B objB = objA.new B(); // this is how we create an object of an inner class.
+            objB.show();
+        }
+    } 
+
+
+
+

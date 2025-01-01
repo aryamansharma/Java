@@ -1,7 +1,22 @@
-public class Main {
-    public static void main(String[] args) {
+abstract class Car {
+    public abstract void drive();
 
-        QuestionService questionService = new QuestionService();
-        questionService.playQuiz();
+    public void playMusic() {
+        System.out.println("playing music...");
+    }
+}
+
+class Ferrari extends Car {
+    
+    public void drive() {
+        System.out.println("driving...");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Car car = new Ferrari();
+        car.drive();
+        car.playMusic();
     }
 }

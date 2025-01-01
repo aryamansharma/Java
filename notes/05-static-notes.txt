@@ -81,3 +81,7 @@
             type = "phone";
         }
     }
+
+4. static class : 
+    * for static class we dont need to create an object of that class.
+    * we can only make an inner class as a static class.
