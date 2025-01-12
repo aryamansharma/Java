@@ -1,0 +1,22 @@
+1. enum is a special class that represents a group of constants.
+
+2. defining an enum :
+
+    // these values inside an enum are objects as well.
+    // in java, for each value inside an enum we have a number, and it starts from 0,   
+        so, Running will be0, Failed will be 1, Pending will be 2 and so on...
+    enum Status {
+        Running,
+        Failed,
+        Pending,
+        Success
+    }
+
+    class Main {
+        public static void main(String a[]) {
+            Status s = Status.Running;
+            System.out.println(s); // output = Running
+            System.out.println(s.ordinal()); // output = 0
+            Status[] ss = Status.values(); // this will give an array of all the values inside an enum
+        }
+    }
