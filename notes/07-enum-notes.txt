@@ -20,3 +20,71 @@
             Status[] ss = Status.values(); // this will give an array of all the values inside an enum
         }
     }
+
+3. we can also use if, else and swicth with enums but for switch we use slightly different syntax:
+    enum Status {
+        Running,
+        Failed,
+        Pending,
+        Success
+    }
+
+    class Main {
+        public static void main(String a[]) {
+            Status s = Status.Running;
+
+            switch(s) {
+
+                // as you can see we dont use the s.Running, we just directly use the enum value 
+               case Running :
+                System.out.println(s);
+                break;
+
+                case Failed :
+                    System.out.println(s);
+                    break;
+
+                case Pending :
+                    System.out.println(s);
+                    break;
+
+                default:
+                    System.out.println(s);
+                    break;
+            }
+        }
+    }
+
+4. the values of the enum are objects so the enum can have constructor, methods , getters and setters and instance variables, we just cannot extend an enum
+    enum Laptop {
+        Macbook(3000), XPS(2500), Surface, Thinkpad(2000);
+
+        private int price;
+
+        //this non parameterised constructor will be called when creating the Surface object.
+        Laptop() {
+            this.price = 1900;
+        }
+
+        Laptop(int price) {
+            this.price = price;
+        }
+
+        public int getPrice() {
+            return this.price;
+        }
+
+        public void setPrice(int newPrice) {
+            this.price = newPrice;
+        }
+    }
+
+    class Main {
+        public static void main(String a[]) {
+            Laptop[] laptop = Laptop.values();
+            for (Laptop lappy : laptop) {
+                // we can alos use this name method on the enum to give the name of the enum object or the name of the enum value
+                System.err.println(lappy.name()+" : "+lappy.getPrice());
+            }   
+        }  
+    }
