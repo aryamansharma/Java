@@ -412,6 +412,26 @@ OOP in Java :
             }
         }
 
+        NOTE : in case we have a situation as method overridding like this:
+            class A {
+                public void show() {
+                    System.out.println("in A show");
+                }
+            }
+
+            class B extends A {
+                public void show() {
+                    System.out.println("in B show");
+                }
+            }
+            class Main {
+                public static void main(String[] args) {
+                    A obj = new B();
+                    // the implementation of the child class method will run 
+                    obj.show();  // output : "in B show"
+                }
+            }
+
 17. wrapper classes in java : in java for every primitive type we have a wrapper class for eg : for int we have Integer wrapper class etc.
     wrapper classes extends the Object class.
     this extends the functionality of primitive types.
@@ -469,6 +489,7 @@ OOP in Java :
     3. an abstract class contain abstract and normal methods as well,
         but we cannot create an abstract method inside a concrete(non-abstract) class.
     4. every abstract method implementation should always be in the extended class.
+    5. an abstract class can extend to only 1 class.
 
 19. inner class : we can create a class inside a class like this :
     class A {
@@ -489,6 +510,44 @@ OOP in Java :
         }
     } 
 
+20. anonymous inner class :
+    * suppose we want to override the implementation of a method of a class for just 1 single use case, in that case we can use anonymous inner class:
+        class A {
+            public void show() {
+                System.out.println("in A show");
+            }
+        }
 
+        class Main {
+            public static void main(String a[]) {
+                A obj = new A() {                           // here will be the new implementation of this show method
+                        public void show() {
+                        System.out.println("in new show");
+                    }
+                };
 
+                obj.show();                 // output : "in new show"
+            }
+        }
 
+        NOTE : anonymous inner class can only be used in case of method overridding only, 
+            we cannot add a new method in this class, that will not run.
+
+21. we can implement an abstract method using anonymous inner class:
+    abstract class A {
+        public abstract void show();
+    }
+
+    class Main {
+        public static void main(String a[]) {
+            // here we are not creating an object of the abstract class, 
+                we cannot create an object of the inner class, instead we are creating the pbject of the anonymous inner class.
+            A obj = new A() { 
+                public void show() {
+                    System.out.println("in new show");
+                }
+            };
+
+            obj.show(); // output = "in new show"
+        }
+    }

@@ -1,0 +1,101 @@
+1. interfaces are used to create the shape of an object.
+    * suppose we have a class in which there are only abstract methods in that case instead of creatign a class, we can create an interface.
+    * every method in the interface needs to have the implementation in the class which implements this interface.
+    * we can also store declare variables in an interface but the value of those variables will be static and final.
+    * by default all the methods in an interface are public abstract. we dont need to write these keywords explicitly.
+    * just like abstract class, we can not create an object of an interface, but the shape of that object can be of the type interface.
+
+    interface A {
+        void show();
+        void config();
+    }
+
+    class B implements A {
+        public void show() {
+            System.out.println("in show");
+        }
+
+        public void config() {
+            System.out.println("in config");
+        }
+    }
+
+    class Main {
+        public static void main(String a[]) {
+            A obj = new B();
+            obj.show(); // output = in show
+            obj.config(); // output = in config
+        }
+    }
+
+2. a class can implement multiple interfaces : 
+    interface X {
+        void run();
+    }
+
+    interface A {
+        void show();
+        void config();
+    }
+
+    class B implements A,X {
+        public void show() {
+            System.out.println("in show");
+        }
+
+        public void config() {
+            System.out.println("in config");
+        }
+
+        public void run() {
+            System.out.println("in run");
+        }
+    }
+
+    class Main {
+        public static void main(String a[]) {
+            A obj = new B();
+            obj.show(); // output = in show
+            obj.config(); // output = in 
+            
+            // for running the run method we need to give the shape of the object as X interface because A interface dont have any idea of run method.
+            X obj1 = new B();
+            obj.run(); // output = in run
+        }
+    }
+
+3. inheritance can also be implemented in interfaces :
+     interface X {
+        void run();
+    }
+
+    interface A extends X {
+        void show();
+        void config();
+    }
+
+    class B implements A {
+        public void show() {
+            System.out.println("in show");
+        }
+
+        public void config() {
+            System.out.println("in config");
+        }
+
+        public void run() {
+            System.out.println("in run");
+        }
+    }
+
+    class Main {
+        public static void main(String a[]) {
+            A obj = new B();
+            obj.show(); // output = in show
+            obj.config(); // output = in 
+
+            // now we dont need to create an another object with type X
+            obj.run(); // output = in run
+        }
+    }
+

@@ -1,22 +1,33 @@
-abstract class Car {
-    public abstract void drive();
+interface Computer {
+    void code();
+}
 
-    public void playMusic() {
-        System.out.println("playing music...");
+class Laptop implements Computer {
+    public void code() {
+        System.out.println("Laptop is running");
     }
 }
 
-class Ferrari extends Car {
-    
-    public void drive() {
-        System.out.println("driving...");
+class Desktop implements Computer {
+    public void code() {
+        System.out.println("Desktop is running");
+    }
+}
+
+class Developer {
+    public void devApp(Computer computer) {
+        computer.code();
     }
 }
 
 class Main {
     public static void main(String[] args) {
-        Car car = new Ferrari();
-        car.drive();
-        car.playMusic();
+        Computer desktop = new Desktop();
+        Computer laptop = new Laptop();
+
+        Developer developer = new Developer();
+        developer.devApp(laptop);
+        developer.devApp(desktop);
+        
     }
 }
