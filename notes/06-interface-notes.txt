@@ -108,3 +108,23 @@
         * serialization is a concept where we can store object values on our hard drive.
         * deserialization is a concept where we can retrieve object values from our hard drive.
 
+5. functional / SAM (Sinlge Abstract Method) interace : we can implement the method of a function interface using anonymous inner class -
+    
+    // if we want to create a functional interface we can use the FunctionalInterface annotation to reduce the error,
+        because suppose we dont use this annotation and we wanted to create function interface and by mistake we add another method in this interface,
+        it will throw an error, but if we use this annotation, it will throw an error.
+
+    @FunctionalInterface
+    interface A {
+        void show();
+    }
+
+    class Main() {
+        public static void main(String a[]) {
+            A obj = new A() 
+            {
+                public void show("in A interface show");
+            };
+        }
+    }
+ 

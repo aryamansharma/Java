@@ -541,7 +541,7 @@ OOP in Java :
     class Main {
         public static void main(String a[]) {
             // here we are not creating an object of the abstract class, 
-                we cannot create an object of the inner class, instead we are creating the pbject of the anonymous inner class.
+                we cannot create an object of the inner class, instead we are creating the object of the anonymous inner class.
             A obj = new A() { 
                 public void show() {
                     System.out.println("in new show");
