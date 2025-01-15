@@ -99,3 +99,12 @@
         }
     }
 
+4. there are 3 different types of interfaces : 
+    1. normal interace : a type of interace with 2 or more than 2 methods.
+
+    2. functional/SAM(Signle Abstract Method) interface : a type of interface with just 1 method.
+
+    3. marker interace : an interface with 0 methods. these type of interface is used to implement serialization or deserialization.
+        * serialization is a concept where we can store object values on our hard drive.
+        * deserialization is a concept where we can retrieve object values from our hard drive.
+

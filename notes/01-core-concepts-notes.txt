@@ -175,3 +175,25 @@ core Java:
 
         }   
     }
+
+17. annotations : we use annotations to describe what we are trying to do, in compile time. basically we provide the meta data of our cude using annotations.
+    class A {
+        public void show() {
+            System.out.println("Hello");
+        }
+    }
+
+    class B extends A {
+        @Override // this is an annotation, which is telling the compiler that we are overriding this method. 
+                  // if we dont define a method in the parent class with the same name, than it will throw an error, if we dont use Override annotation.
+        public void show() {
+            System.out.println("Hello");
+        }
+    }
+
+    class Main {
+        public static void main(String a[]) {
+            B obj = new B();
+            obj.show();
+        }
+    }
