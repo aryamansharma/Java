@@ -197,3 +197,64 @@ core Java:
             obj.show();
         }
     }
+
+18. exceptions : exceptions are also known as Runtime errors.
+
+    class Main {
+        public static void main(String a[]) {
+            try {
+
+            } 
+            catch (Exception e) { 
+                // e is the object of type Exception class. if try block fails then catch block will be executed, 
+                    otherwise the catch block will not be executed
+
+            }
+        }
+    }
+
+20. in java we can use multiple catch block for a single try block, so that we can handle different types of exceptions.
+     class Main {
+        public static void main(String a[]) {
+            int[] num = new int[5];
+            try {
+                System.out.println(4/0); // for this ArithmeticException catch block will be executed
+                System.out.println(num[5]); // for this ArrayIndexOutofBoundsException catch will be executed
+            } 
+            catch(ArithmeticException e) {
+
+            }
+            cathc (ArrayIndexOutofBoundsException e) {
+
+            }
+            catch (Exception e) { 
+                
+
+            }
+
+            // this is the structure we follow to handle different types of exceptions, basically Exception is the parent class of ArithmeticException class
+                and ArrayIndexOutofBoundsException class. and also we should always use Exception class block in the end of all blocks because sometimes even we are 
+                not sure what kind of exception can occur, so this block will handle all types of exception.
+            
+            // suppose at a line an exception is thrown in the try block, so in the try block rest of the code is not executed.
+        }
+    }
+
+21. exception hierarchy : 
+    Object class => Throwable class => Error class 
+                                    ||
+                                    ||
+                                    => Exception class => RuntimeException class => ArithmeticException class
+                                    ||                                           ||
+                                    ||                                           => ArrayIndexOutofBoundsException class and many other class extends RuntimeException class.           
+                                    ||
+                                    ||
+                                    ||
+                                    ||
+                                    => SQLException class
+                                    ||
+                                    => IOException class
+
+
+    * RuntimeException class is also known as unckecked errors, 
+        and other classes of Exception class are known as checked errore, meaning we need to handle them    
