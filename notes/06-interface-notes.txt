@@ -128,3 +128,52 @@
         }
     }
  
+6. lambda expression ( -> ) : we can use lambda expression only with function interface and we create an anonymous inner class. 
+    * it is used to reduce the size of the code.
+
+    @FunctionalInterface
+    interface A {
+        void show();
+    }
+
+    class Main {
+        public static void main(String a[]) {
+            A obj = () -> {
+                System.out.println("in A interace show");
+            }; // here if we just want to execute this 1 line of code, we can also remove these curly braces.
+            obj.show();
+        }
+    }
+
+    * in case we want to pass paramters to the method wwe can do something like this : 
+
+    @FunctionalInterface
+    interface A {
+        void show(int num);
+    }
+
+    class Main {
+        public static void main(String a[]) {
+            // for just single paramter we can also even remove () before the -> (lambda expression) 
+            // we also dont need to specify the type of the paramter while implementing this method
+            A obj = num -> System.out.println("in A interace show"+num);
+            obj.show(5);
+        }
+    }
+
+    * in case the method is return something we can do something like this :
+
+    @FunctionalInterface
+    interface A {
+        void add(int i, int j);
+    }
+
+    class Main {
+        public static void main(String a[]) {
+            // in case we are returning something in just 1 line we dont need to specify the return keyword, 
+            // and we dont need to specify the curly braces as well.
+            A obj = (i,j) -> i+j; 
+            obj.add(5,6);
+        }
+    }
+
