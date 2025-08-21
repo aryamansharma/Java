@@ -258,3 +258,50 @@ core Java:
 
     * RuntimeException class is also known as unckecked errors, 
         and other classes of Exception class are known as checked errore, meaning we need to handle them    
+
+22. throw keyword : we can manually throw an exception with a class of which type of exception we want to handle exception.
+
+    class Main {
+        public static void main(String a[]) {
+            int i = 20;
+            int j = 0;
+            try {
+                j = 18/i;
+                if(j==0) {
+                    // this is how we manually throw an exception. and also we can pass custom message in the constructor of this class like this
+                 throw new ArithmeticException("can not divide by 0");
+                }
+            } catch (ArithmeticException e) {
+                System.out.println(e);
+            } catch (Exception e) {
+                System.err.println("Something is wrong");
+            }
+        }
+    }
+
+23. creating a custom exception class:
+
+    // extending this RuntimeException class is important
+    class MyException extends RuntimeException {
+        public MyException (String str) {
+            super(str); // this is also important
+        }
+    }
+
+
+    class Main {
+        public static void main(String a[]) {
+            int i = 20;
+            int j = 0;
+            try {
+                j = 18/i;
+                if(j==0) throw new MyException("can not divide by 0");
+            } catch (MyException e) {
+                System.out.println(e);
+            } catch (Exception e) {
+                System.err.println("Something is wrong");
+            }
+        }
+    }
+
+24. 

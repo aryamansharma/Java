@@ -1,12 +1,21 @@
-@FunctionalInterface
-interface A {
-    int add(int i, int j);
+class MyException extends RuntimeException {
+    public MyException (String str) {
+        super(str);
+    }
 }
+
 
 class Main {
     public static void main(String a[]) {
-        A obj = (i, j) -> i  + j;
-        int result = obj.add(5,99);
-        System.err.println(result);
+        int i = 20;
+        int j = 0;
+        try {
+            j = 18/i;
+            if(j==0) throw new MyException("can not divide by 0");
+        } catch (MyException e) {
+            System.out.println(e);
+        } catch (Exception e) {
+            System.err.println("Something is wrong");
+        }
     }
 }
